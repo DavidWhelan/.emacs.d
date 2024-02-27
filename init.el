@@ -34,7 +34,7 @@
   :pin melpa-stable
   :config
   (require 'workgroups2)
-  (workgroups-mode a))
+  (workgroups-mode 1))
 
 (use-package vscode-icon
   :ensure t
