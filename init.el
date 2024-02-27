@@ -29,6 +29,13 @@
   :bind (("C-c p" . 'projectile-command-map))
   :config(projectile-mode +1))
 
+(use-package workgroups2
+  :ensure t
+  :pin melpa-stable
+  :config
+  (require 'workgroups2)
+  (workgroups-mode a))
+
 (use-package vscode-icon
   :ensure t
   :commands (vscode-icon-for-file))
