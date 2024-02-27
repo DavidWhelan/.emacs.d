@@ -9,6 +9,11 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(use-package telephone-line
+  :ensure t
+  :config
+  (telephone-line-mode 1))
+
 (use-package company
   :ensure t
   :config (add-hook 'after-init-hook 'global-company-mode))  
