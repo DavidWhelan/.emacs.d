@@ -1,8 +1,12 @@
-
+;;;; package --- Summary
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
+
+;;; Commentary:
+
+;;; Code:
 
 ;; install use package if it hasn't been already
 (unless (package-installed-p 'use-package)
@@ -16,11 +20,21 @@
 
 (use-package company
   :ensure t
-  :config (add-hook 'after-init-hook 'global-company-mode))  
+  :config (add-hook 'after-init-hook 'global-company-mode))
 
 (use-package magit
   :ensure t
   :pin melpa-stable)
+
+(use-package flycheck
+  :ensure t
+  :config
+  (add-hook 'after-init-hook #'global-flycheck-mode))
+
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-global-mode 1))
 
 ;; minibuffer completion
 (use-package ivy
@@ -43,7 +57,7 @@
   :ensure t
   :pin melpa-stable
   :bind (("C-c p" . 'projectile-command-map))
-  :config(projectile-mode +1))
+  :config (projectile-mode +1))
 
 (use-package vscode-icon
   :ensure t
@@ -66,10 +80,12 @@
   (setq dired-sidebar-use-term-integration t)
   (setq dired-sidebar-use-custom-font t))
 
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'zenburn t)
 
-(when (string= system-type "darwin")       
+(when (string= system-type "darwin")
   (setq dired-use-ls-dired nil))
 
 (load (expand-file-name "~/.roswell/helper.el"))
@@ -91,3 +107,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+;;; init.el ends here
