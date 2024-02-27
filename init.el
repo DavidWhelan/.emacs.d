@@ -9,6 +9,10 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(use-package company
+  :ensure t
+  :config (add-hook 'after-init-hook 'global-company-mode))  
+
 (use-package magit
   :ensure t
   :pin melpa-stable)
@@ -23,6 +27,13 @@
   
   (ivy-mode 1))
 
+;; better isearch using ivy
+(use-package swiper
+  :bind (("C-s" . 'swiper-isearch))
+  :ensure t
+  :after ivy)
+
+;; project management
 (use-package projectile
   :ensure t
   :pin melpa-stable
