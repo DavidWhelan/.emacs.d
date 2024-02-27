@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: defpackage
+# key: defpackage
+# --
+
+(defpackage $1
+	    (:use :cl$2)${3:
+	    (:import-from $4)})
+(in-package :$1)
