@@ -2,7 +2,7 @@
 # name: defpackage
 # key: defpackage
 # --
-
+(in-package :cl-user)
 (defpackage $1
 	    (:use :cl$2)${3:
 	    (:import-from $4)})
