@@ -67,6 +67,23 @@
   :bind (("C-c p" . 'projectile-command-map))
   :config (projectile-mode +1))
 
+(use-package paredit
+  :ensure t
+  :config
+  (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+  (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+  (add-hook 'ielm-mode-hook             #'enable-paredit-mode)
+  (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
+  (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+  (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+
+  (add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
+  
+  (defun override-sly-repl-bindings-with-paredit ()
+    (define-key sly-repl-mode-map
+		(read-kbd-macro paredit-backward-delete-key) nil))
+  (add-hook 'sly-repl-mode-hook 'override-sly-repl-bindings-with-paredit))
+
 (use-package vscode-icon
   :ensure t
   :commands (vscode-icon-for-file))
@@ -95,6 +112,9 @@
 
 (when (string= system-type "darwin")
   (setq dired-use-ls-dired nil))
+
+(setq inhibit-startup-screen t)
+(kill-buffer "*scratch*")
 
 (load (expand-file-name "~/.roswell/helper.el"))
 
