@@ -33,7 +33,15 @@
 
 (use-package yasnippet
   :ensure t
+  
   :config
+  (define-key yas-minor-mode-map (kbd "<tab>") nil)
+  (define-key yas-minor-mode-map (kbd "TAB") nil)
+  (define-key yas-minor-mode-map (kbd "C-o") yas-maybe-expand)
+
+  (define-key yas-keymap (kbd "C-n") 'yas-next-field-or-maybe-expand)
+  (define-key yas-keymap (kbd "C-p") 'yas-prev-field)
+  
   (yas-global-mode 1))
 
 ;; minibuffer completion
