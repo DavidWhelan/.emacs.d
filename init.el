@@ -67,22 +67,10 @@
   :bind (("C-c p" . 'projectile-command-map))
   :config (projectile-mode +1))
 
-(use-package paredit
+(use-package rainbow-delimiters
   :ensure t
   :config
-  (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
-  (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
-  (add-hook 'ielm-mode-hook             #'enable-paredit-mode)
-  (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
-  (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
-  (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
-
-  (add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
-  
-  (defun override-sly-repl-bindings-with-paredit ()
-    (define-key sly-repl-mode-map
-		(read-kbd-macro paredit-backward-delete-key) nil))
-  (add-hook 'sly-repl-mode-hook 'override-sly-repl-bindings-with-paredit))
+  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
 (use-package vscode-icon
   :ensure t
@@ -105,10 +93,16 @@
   (setq dired-sidebar-use-term-integration t)
   (setq dired-sidebar-use-custom-font t))
 
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(use-package zenburn-theme
+  :ensure t)
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'zenburn t)
+(use-package solarized-theme
+  :ensure t)
+
+(load-theme 'solarized-light t)
+
+(electric-pair-mode 1)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 (when (string= system-type "darwin")
   (setq dired-use-ls-dired nil))
