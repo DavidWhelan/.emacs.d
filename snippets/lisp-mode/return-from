@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: return-from
+# key: return-from
+# --
+
+(return-from $1 $2)$0

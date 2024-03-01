@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: decf
+# key: decf
+# --
+
+(decf $1)$0

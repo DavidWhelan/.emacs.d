@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: rotatef
+# key: rotatef
+# --
+
+(rotatef $1)$0

@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: defconstant
+# key: defconstant
+# --
+
+(defconstant $1 $2 ${3:
+	      "$4"})
+$0

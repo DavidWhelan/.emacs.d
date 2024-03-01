@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: incf
+# key: incf
+# --
+
+(incf $1)$0

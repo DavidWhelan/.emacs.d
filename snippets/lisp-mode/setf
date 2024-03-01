@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: setf
+# key: setf
+# --
+
+(setf $1 $2)$0
