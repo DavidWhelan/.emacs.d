@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: dolist
+# key: dolist
+# --
+
+(dolist ($1 $2)
+	$3)$0

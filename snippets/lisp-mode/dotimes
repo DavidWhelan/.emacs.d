@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: dotimes
+# key: dotimes
+# --
+
+(dotimes ($1 $2)
+	 $3)$0
