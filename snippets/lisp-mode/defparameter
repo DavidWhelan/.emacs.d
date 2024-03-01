@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: defparameter
+# key: defparameter
+# --
+
+(defparameter $1 $2)
+$0

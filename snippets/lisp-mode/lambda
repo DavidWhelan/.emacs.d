@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: lambda
+# key: lambda
+# --
+
+(lambda ($1${2:&optional $3}${4:&rest $5}${6:&key $7})$8)
+$0
