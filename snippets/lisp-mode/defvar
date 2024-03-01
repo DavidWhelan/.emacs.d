@@ -3,5 +3,6 @@
 # key: defvar
 # --
 
-(defvar $1 $2)
+(defvar $1 $2 ${3:
+	      "$4"})
 $0

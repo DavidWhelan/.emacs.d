@@ -3,5 +3,6 @@
 # key: defparameter
 # --
 
-(defparameter $1 $2)
+(defparameter $1 $2 ${3:
+	      "$4"})
 $0
