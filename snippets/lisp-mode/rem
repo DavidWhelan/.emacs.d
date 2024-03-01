@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: rem
+# key: rem
+# --
+
+(rem $1)$0

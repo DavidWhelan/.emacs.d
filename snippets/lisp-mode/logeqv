@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: logeqv
+# key: logeqv
+# --
+
+(logeqv $1)$0

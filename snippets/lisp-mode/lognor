@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: lognor
+# key: lognor
+# --
+
+(lognor $1)$0

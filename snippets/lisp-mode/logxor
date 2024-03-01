@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: logxor
+# key: logxor
+# --
+
+(logxor $1)$0

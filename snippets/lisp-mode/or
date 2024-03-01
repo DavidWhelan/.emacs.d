@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: or
+# key: or
+# --
+
+(or $1)$0

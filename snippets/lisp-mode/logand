@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: logand
+# key: logand
+# --
+
+(logand $1)$0
