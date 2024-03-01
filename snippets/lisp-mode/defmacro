@@ -3,7 +3,7 @@
 # key: defmacro
 # --
 
-(defmacro $1 ($2${3:&optional $4}${5:&rest $6}${7:&key $8})
+(defmacro $1 ($2${3:&optional $4}${5:&body $6}${7:&key $8})
        ${9:"$10"}
        $11)
 $0
